@@ -10,6 +10,16 @@ namespace CharacterSheet.Character {
 
         public int[] Scores() => scores.Clone() as int[];
 
+        public AbilityScore(int[] scores) {
+            if (scores == null)
+                throw new ArgumentNullException(nameof(scores));
+
+            if (scores.Length != 6)
+                throw new ArgumentException("There must be exactly 6 scores given");
+
+            this.scores = scores;
+        }
+
         public AbilityScore(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
             scores = new int[] { strength, dexterity, constitution, intelligence, wisdom, charisma };
         }

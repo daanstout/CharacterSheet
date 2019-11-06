@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CharacterSheet.Character;
+using CharacterSheet.Character.Races;
 using DaanLib;
 
 namespace CharacterSheet {
@@ -15,13 +16,9 @@ namespace CharacterSheet {
         public CharacterForm() {
             InitializeComponent();
 
-            try {
-                Sizes.GetSizeFromHeight(-1);
-            } catch (ArgumentException ae) {
-                Console.WriteLine(ae.Message);
-            } catch (Exception e) {
-                Console.WriteLine(e.Message);
-            }
+            CharacterInfo character = new CharacterInfo(Dwarf.instance);
+
+            Console.WriteLine(Dwarf.instance.CharacterIsRace(character));
         }
 
         /// <summary>

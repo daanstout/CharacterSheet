@@ -57,7 +57,7 @@ namespace CharacterSheet.Character {
         public static Sizes GetSizeFromHeight(float height) {
             if (height <= 0)
                 //throw new ArgumentException(message: heightErrorMessage);
-                throw new ArgumentException(GlobalVariables.stringManager.GetString("incorrectHeightMessage", CultureInfo.CurrentUICulture));
+                throw new ArgumentException("Height cannot be equal to or less than zero");
 
             // Go through each size, from smaller to larger, until you find a size who's max size is larger than the give size
             foreach (Sizes size in sizes)

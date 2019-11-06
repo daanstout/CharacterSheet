@@ -48,6 +48,12 @@ namespace CharacterSheet.Character {
         public int experiencePoints { get; set; }
 
         /// <summary>
+        /// The player level
+        /// <para>This is the same as the sum of all class levels</para>
+        /// </summary>
+        public int level { get; set; }
+
+        /// <summary>
         /// The ability scores of the character
         /// </summary>
         public AbilityScore scores { get; set; }
@@ -64,5 +70,9 @@ namespace CharacterSheet.Character {
         /// </summary>
         public bool isMultiClassed => multiClasses == null ? false : multiClasses.Count == 0; // check if multiclass list is null or empty
         #endregion
+
+        public CharacterInfo(ARace race) {
+            this.race = race;
+        }
     }
 }

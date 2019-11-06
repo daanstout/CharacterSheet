@@ -59,14 +59,5 @@ namespace CharacterSheet.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to test.
-        /// </summary>
-        internal static string incorrectHeightMessage {
-            get {
-                return ResourceManager.GetString("incorrectHeightMessage", resourceCulture);
-            }
-        }
     }
 }
